@@ -1,0 +1,14 @@
+The Basics of Clue:
+
+Clue Setup:
+Clue setup involves randomly selecting one card from each stack in weapons, rooms, and suspects. 
+After those have been selected, the rest of the cards are randomly dealt to the number of players. 
+
+Gameplay:
+Each player on their turn has the choice to move by rolling the dice or using a secret passage, or they can make a suggestion if they have started in a room other than the one they finished the last turn in. 
+
+A suggestion requires a suspect, a weapon and revolves around the room the player is in. 
+
+The first player to the players left checks their cards for proof, and if proof exists, the player shows the card, or one of the cards, they have, to the player.
+If they have no proof, it moves onto the next player. 
+
