@@ -2,6 +2,7 @@ import random
 import turtle
 #Making some test changes for Git
 #Another git change
+#MyBranch change4
 
 human_player = 7
 player_select_string = "Which player do you want to be? \n 1.) Miss Scarlet \n 2.) Col. Mustard \n 3.) Mrs. White \n 4.) Mr. Green \n 5.) Mrs. Peacock \n 6.) Professor Plum \n"  
