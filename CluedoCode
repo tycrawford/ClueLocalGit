@@ -1,0 +1,107 @@
+Two main functions
+Initialize and play
+
+Initialize:
+Start by entering options
+Tell computer how many players
+Pick human player
+Assign computer players
+Build virtual board
+Draw virtual board
+Build instances for each player
+Assign starting positions based on native start positions
+
+
+Play:
+Constant while loop until mystery is solved. 
+Iterate through players each having turns
+
+Pseudo:
+current_player = 0
+While game is still on:
+	turn_function(current_player)
+		while Turn is still going:
+			turn_options(player)
+				options_list = []
+				if last_end_room != turn_start_room
+					add option to suggest
+				if dice hasn't been rolled:
+					add option to roll
+				if moved_spaces = 0:
+					add option to move
+				if turn_start_room.secret_passage = True AND turn_start_room = current room:
+					add option to use secret passage
+				if 1 = 1:
+					add option to accuse
+				player_made_valid_choice = false
+			while player_made_valid_choice false:
+				choice = input (what option do you want to make)
+				if choice in options list:
+					set player_made_valid_choice = True
+				else:
+					print("That is not a valid choice")
+			if choice = roll:
+				this_turn_roll = random.randrange(2,13)
+				print(current_player + " rolled " + str(this_turn_roll)
+			if choice = move:
+				valid_move = False
+				while valid_move = False:
+					move = input("Enter a move string")
+					temp_move_list = []
+					temp_move_list,append(current_player_pos)
+					current_working_index = 1
+					for letter in move:
+						if letter = U:
+							temp_move_list.append([temp_move_list[current_working_index - 1][0], (temp_move_list[current_working_index - 1][1] -1)]) 	
+						if letter = D:
+							temp_move_list.append([temp_move_list[current_working_index - 1][0], (temp_move_list[current_working_index - 1][1] +1)]) 	
+						if letter = L:
+							temp_move_list.append([(temp_move_list[current_working_index - 1][0] - 1), temp_move_list[current_working_index - 1][1]]) 	
+                        if letter = R:
+							temp_move_list.append([(temp_move_list[current_working_index - 1][0] + 1), temp_move_list[current_working_index - 1][1]]) 
+                        if temp_move_list[current_working_index] in door_tiles:
+                            about_to_enter = room with door tile
+                            confirm = input("Player is about to enter " + about_to_enter + ". Type TRUE to confirm")
+                            if confirm = Yes:
+                            current_player.current_room = about_to_enter
+                            valid_move = True
+                            break
+                        if temp_move_list[current_working_index] not in floor_tiles and not in door_tiles:
+                            print("Current move string tries to walk through walls! There's a killer on the loose, not a ghost!")
+                            break
+                current_player.current_player_pos = temp_move_list[len(temp_move_list) - 1]
+            if choice = suggest:
+                suggested_room = current_player.room #automatically selected
+                choose_suspect = make_list(suspects) #makes a nice list of choices
+                choose_weapon = make_list(weapons)
+                suggested_suspect = make_choice(suspects, choose_suspect, "suspect") #returns a valid choice
+                suggested_weapon = make_choice(weapons, choose_weapon, "weapon")
+                print(current_player + " suggested " + suggested_suspect + " with the " + suggested_weapon + " in the " + suggested_room + ".")
+                # come up with a new list of all other players
+                #run a for loop across remaining players  
+                    #create a list of cards held by currently questioned player called list_of_proof
+                    #for each suggested card, check to see if in questioned palyers hand
+                        #if yes, append to list
+                    #once done, use random.randrange(0, len(list_of_proof))
+			if choice = secret passage:
+			if choice = accuse:
+
+def make_list(work_list):
+    card_list = []   
+    current_card = 1 
+    for i in work_list:
+        card_list = card_list + str(current_card) + " " + i + "\n"
+        current_card += 1
+    return card_list
+
+def make_choice(work_list, display_list, subject):
+    valid_choice = False
+    while valid_choice == False:
+        print("List of " + subject + "s")
+        print(display_list)
+        choice = input("Please make a valid choice")
+        if choice in range(1, len(work_list) + 1):
+            valid_choice = True
+        else:
+            print("You must select a number 1-" + str(len(work_list)))
+    return choice
