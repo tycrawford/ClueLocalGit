@@ -1,21 +1,21 @@
 import random
 
-def play_turn(player):
-    turnOver = False
+def play_turn(player): #series of events that take place during a turn
+    turnOver = False #initial conditions of a fresh turn
     dice = 0
     suggestionMade = False
     moved = False
-    while turnOver == False:
-        optionsList = check_options(player, dice, suggestionMade, moved)
-        optionsDict = {}
-        optionsString = player.character + ', your options are:\n'
+    while turnOver == False: #a turn can have many different phases or pieces, and so long as the player can continue to act, the turn is still ongoing
+        optionsList = check_options(player, dice, suggestionMade, moved) #calls function to assess current game situation
+        optionsDict = {}  #starts a dictionary for options. only really useful for having a numbereed list that is mutable
+        optionsString = player.character + ', your options are:\n' #the repeated prompt to ask the player what they can do
         for lineItem in optionsList:
             optionsString += str(lineItem[0]) + '.' + lineItem[1] + '\n'
-            optionsDict[lineItem[0]] = lineItem[1]
-        validChoice = False
+            optionsDict[lineItem[0]] = lineItem[1] #the idea of whats happening here is to take a list of options and number them in consecutive order. overall just looks neater this way
+        validChoice = False #this is a check to make sure that the choice the player makes exists within the dictionary of chocies available
         while validChoice == False:
             print(optionsString)
-            choice = input(player.character + ", make your selection \n")
+            choice = input(player.character + ", make your selection \n") #gets a prompt from player, must be number, must be in list
             if choice.isnumeric() == False:
                 print("Please type a number from the choices!")
             else:
@@ -39,7 +39,7 @@ def play_turn(player):
             move(dice)
             moved = True
 
-def rollDice():
+def rollDice(): #basic roll dice function
     roll = random.randrange(2,13)
     return roll
 
@@ -76,24 +76,24 @@ def makeAccusation(player):
     accRoom = ''
     print(player.character + " has accused " + accSusp + " in the " + accRoom + " with the " + accWeap + '\n')
 
-def check_options(player, dice, suggestionMade, moved):
+def check_options(player, dice, suggestionMade, moved): #uses conditions to check to see if a player can make certain moves on their turns
     optionsList = []
     currentOption = 1
-    if player.lter != player.currentRoom and suggestionMade == False:
+    if player.lter != player.currentRoom and suggestionMade == False: #uses current room vs previous turn end room as well as wether a suggestion has been made already
         optionsList.append([currentOption, "Make a Suggestion"])
-        currentOption += 1
-    if dice == 0:
+        currentOption += 1 #iterates through a sequential list of options
+    if dice == 0: #unrolled dice = 0, any rolled dice is between 2 and 12
         optionsList.append([currentOption, "Roll the Dice"])
         currentOption += 1
-    if dice > 0 and moved == False:
+    if dice > 0 and moved == False: # a player can roll and opt to not move, this is the case for this if statement
         moveString = "Move " + str(dice) + " Spaces"
         optionsList.append([currentOption, moveString])
         currentOption += 1
-    optionsList.append([currentOption, "Make an Accusation"])
-    optionsList.append([0, "End Your Turn"])
+    optionsList.append([currentOption, "Make an Accusation"]) #an accusation can be made at any time
+    optionsList.append([0, "End Your Turn"]) #a player can end their turn at any time
     return optionsList
 
-class Player:
+class Player: 
     def __init__(self, character):
         self.character = character
         self.human = False
