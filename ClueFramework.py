@@ -65,8 +65,39 @@ def move(dice):
     print("Move string accepted")
 
 def makeSuggestion(player):
-    sugSusp = "Mrs. White"
-    sugWeap = "Revolver"
+    list_suspects = ['Miss Scarlet', 'Col. Mustard', 'Mrs. White', 'Mr. Green', 'Mrs Peacock', 'Professor Plum']
+    validSusp = False
+    suspStr = ''
+    for i in range(6):
+        suspStr = suspStr + str(i) + ") " + list_suspects[i] + "\n"
+    while validSusp == False:
+        print("Please select a suspect \n")
+        sugSusp = input(suspStr)
+        if sugSusp.isnumeric() == False:
+            print("Please type a number ranging from 0-5")
+        else:
+            if int(sugSusp) < 6:
+                validSusp = True
+            else:
+                print(sugSusp + " is not in range!")
+    sugSusp = list_suspects[int(sugSusp)]
+    list_weapons = ['Revolver', 'Lead Pipe', 'Candlestick', 'Rope', 'Knife', 'Wrench']
+    validWeap = False
+    weapStr = ''
+    for i in range(6):
+        weapStr = weapStr + str(i) + ") " + list_weapons[i] + "\n"
+    while validWeap == False:
+        print("Please select a weapon \n")
+        sugWeap = input(weapStr)
+        if sugWeap.isnumeric() == False:
+            print("Please type a number ranging from 0-5")
+        else:
+            if int(sugWeap) < 6:
+                validWeap = True
+            else:
+                print(sugWeap + " is not in range!")
+
+    sugWeap = list_weapons[int(sugWeap)]
     sugRoom = player.currentRoom
     print(player.character + " suggested " + sugSusp + " in the " + sugRoom + " with the " + sugWeap + "\n")
 
