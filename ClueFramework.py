@@ -25,7 +25,7 @@ def play_turn(player): #series of events that take place during a turn
                 else:
                     print(player.character + " has chosen to " + optionsDict.get(choice))
                     validChoice = True
-        if optionsDict.get(choice) == "Roll the Dice":
+        if optionsDict.get(choice) == "Roll the Dice": #compares numerical value of player choice to the actual function listed in the dictionary to decide what the player wants to do
             dice = rollDice()
             print(player.character + " rolled " + str(dice))
         if optionsDict.get(choice) == "Make a Suggestion":
@@ -99,8 +99,49 @@ def makeSuggestion(player):
 
     sugWeap = list_weapons[int(sugWeap)]
     sugRoom = player.currentRoom
+    sugList = [sugSusp, sugWeap, sugRoom]
     print(player.character + " suggested " + sugSusp + " in the " + sugRoom + " with the " + sugWeap + "\n")
-
+    otherPlayers = []
+    questioning = True
+    otherPlayers = [white, scarlet]
+    while questioning == True:
+        possibleCards = []
+        for players in otherPlayers:
+            for card in sugList:
+                if card in players.hand:
+                    possibleCards.append(card)
+            if len(possibleCards) > 0:
+                provingCharacter = players
+                print(players.character + " can disprove the suggestion")
+                break
+            else:
+                print(players.character + " cannot disprove the suggestion")
+        if players.human == True:
+            playerCardChoices = {}
+            selectCardString = ''
+            startIndex = 0
+            for card in possibleCards:
+                playerCardChoices[startIndex] = card
+                startIndex += 1
+            startIndex = 0
+            for values in playerCardChoices:
+                selectCardString = selectCardString + startIndex + ". " + playerCardChoices.get(startIndex) + "\n"
+                startIndex += 1
+            validChoice = False
+            while validChoice == False:
+                choice = input("Please choose a card to show the opponent: \n" + selectCardString)
+                if choice.isnumeric() == False:
+                    print("Please type a number from the choices!")
+                else:
+                    choice = int(choice)
+                    if playerCardChoices.get(choice) == None:
+                        print("Not a valid choice! \n")
+                    else:
+                        print(provingCharacter + " has " + choice)
+        else:
+            shownCard = possibleCards[random.randrange(0, len(possibleCards))]
+            print(players.character + " has " + shownCard)
+        questioning = False
 def makeAccusation(player):
     accSusp = ''
     accWeap = ''
@@ -131,18 +172,38 @@ class Player:
         self.turns_played = 0
         self.lter = "Corridor"
         self.currentRoom = "Hall"
+        self.hand = []
+class Room:
+    def __init__(self,name):
+        self.name = name
+        self.players = []
+        self.secretPassage = None
+        self.boardTiles = []
+        self.walls = []
+        self.doors =[]
+
+
 
 mystery = "Unsolved"
-
-plum = Player("Professor Plum")
+plum = Player("Professor Plum") 
 white = Player("Mrs. White")
 scarlet = Player("Ms. Scarlet")
+white.hand = ['Knife', 'Library']
+scarlet.hand = ['Revolver', 'Hall']
 plum.human = True
 players = [
     plum, scarlet, white
 ]
 
-
+def buildBoard():
+    rooms = ['Hall', 'Billiard Room', 'Ballroom', 'Lounge', 'Conservatory', 'Kitchen', 'Study', 'Library', 'Dining Room']
+    for room in rooms:
+        newroom = Room(room)
+    Conservatory.secretPassage = Lounge
+    Lounge.secretPassage = Conservatory
+    Kitchen.secretPassage = Study
+    Study.secretPassage = Kitchen
+         
 rounds_played = 0
 play_turn(plum)
 # while mystery == "Unsolved":

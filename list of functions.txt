@@ -1,0 +1,34 @@
+play_turn(player)
+    runs checkOptions
+    runs an input check
+    executes appropriate function
+
+roll_dice()
+    sets dice variable to a random number in range of 2-12
+
+move(dice)
+    imports dice number
+    asks for input
+    checks validity of input
+    runs a for loop for each character in move string, checking to make sure move string doesnt hit wall or go off map
+    sets player position to final position of move
+
+make_suggestion(player)
+    takes input on suggested suspect and weapons
+    runs an input check for validity
+    compares the list of suggestions to the hand of each player object
+    if it finds a player that has at least one card, it pulls all their validity
+    randomly selects a card, shows it to player
+
+
+makeAccusation(player)
+    mimics suggestions
+    comapres to solution
+    sets game to gameover
+    decides if player wins
+
+checkOptions(player)
+    checks dice to see if 0
+    checks to see if a suggestion has been made
+    checks to see if player has moved
+
