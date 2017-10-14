@@ -194,8 +194,50 @@ plum.human = True
 players = [
     plum, scarlet, white
 ]
+def playerSelect(suspects):
+    validChoice = False
+    while validChoice == False:
+        numPlayers = input("How many players? 3-6")
+        if numPlayers.isnumeric() == False:
+            print("Please select a number from 3 to 6")
+        else:
+            if int(numPlayers) < 3 or int(numPlayers) > 6:
+                print("Please select a number from 3 to 6")
+            else:
+                print("A " + numPlayers + "-player game")
+                validChoice = True
+    remainingPlayers = []
+    for char in suspects:
+        remainingPlayers.append(char)
+    suspectString = []
+    startIndex = 1
+    for char in remainingPlayers:
+        suspectString = suspectString + str(startIndex) + ") " + remainingPlayers[startIndex - 1] + "\n"
+        startIndex +=1
+    validPlayer = False
+    while validPlayer == False:
+        print("Available characters")
+        print(suspectString)
+        player = input("Make a selection \n")
+        if player.isnumeric() == False or int(player) < 1 or int(player) > len(suspects):
+            print("Please make a valid selection")
+        else:
+            print("The player has chosen to play as " + suspects[int(player - 1)])
+            playerOne = Player(suspects[int(player - 1)])
+            remainingNumPlayers = numPlayers - 1
+            listOfPlayers = [playerOne]
+            validPlayer = True
+            remainingPlayers.remove()
+    while remainingNumPlayers > 0:
+        validAIChoice = False:
+        while validAIChoice == False:
+            suspectString = []
+            startIndex = 1
+            for char in remainingPlayers:
+                suspectString = suspectString + str(startIndex) + ") " + remainingPlayers[startIndex - 1] + "\n"
+                startIndex +=1
 
-def buildBoard():
+def buildBoard(rooms):
     rooms = ['Hall', 'Billiard Room', 'Ballroom', 'Lounge', 'Conservatory', 'Kitchen', 'Study', 'Library', 'Dining Room']
     for room in rooms:
         newroom = Room(room)
@@ -203,7 +245,46 @@ def buildBoard():
     Lounge.secretPassage = Conservatory
     Kitchen.secretPassage = Study
     Study.secretPassage = Kitchen
-         
+
+def dealSolution(rooms, suspects, weapons):
+    solSusp = suspects[random.randrange(0, len(suspects))]
+    solWeap = weapons[random.randrange(0, len(weapons))]
+    solRoom = rooms[random.randrange(0, len(rooms))]
+    remainingCards = []
+    for card in rooms:
+        if card == solRoom:
+            continue
+        else:
+            remainingCards.append(card)
+    for card in suspects:
+        if card == solSusp:
+            continue
+        else:
+            remainingCards.append(card)
+    for card in weapons:
+        if card == solWeap:
+            continue
+        else:
+            remainingCards.append(card)
+    return [remainingCards, solSusp, solWeap, solRoom]
+
+def playGame():
+    gameType = input("What type of game would you like to play? \n 1) Classic \n 2) Master Detective (NOT OPERATIONAL) \n")
+    if gameType == "1":
+        rooms = ['Hall', 'Billiard Room', 'Ballroom', 'Lounge', 'Conservatory', 'Kitchen', 'Study', 'Library', 'Dining Room']
+        suspects = ['Miss Scarlet', 'Col. Mustard', 'Mrs. White', 'Mr. Green', 'Mrs. Peacock', 'Professor Plum']
+        weapons = ['Knife', 'Revolver', 'Candlestick', 'Rope', 'Lead Pipe', 'Wrench']
+    #if gameType == "2":
+    #TODO insert rooms, suspects, and weapons from master detective
+    remainingCardsPlusSolution = dealSolution(rooms, suspects, weapons)
+    solSusp = remainingCardsPlusSolution[1]
+    solWeap = remainingCardsPlusSolution[2]
+    solRoom = remainingCardsPlusSolution[3]
+    
+    buildBoard(rooms)
+    mysterySolved = False
+    while mysterySolved == False:
+
 rounds_played = 0
 play_turn(plum)
 # while mystery == "Unsolved":
