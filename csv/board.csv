@@ -1,0 +1,26 @@
+,-115,-105,-95,-85,-75,-65,-55,-45,-35,-25,-15,-5,5,15,25,35,45,55,65,75,85,95,105,115
+120,Study,Study,Study,Study,Study,Study,,Floor,,Hall,Hall,Hall,Hall,Hall,Hall,,Floor,,Lounge,Lounge,Lounge,Lounge,Lounge,Lounge
+110,Study,Study,Study,Study,Study,Study,Study,Floor,Floor,Hall,Hall,Hall,Hall,Hall,Hall,Floor,Floor,Lounge,Lounge,Lounge,Lounge,Lounge,Lounge,Lounge
+100,Study,Study,Study,Study,Study,Study,Study,Floor,Floor,Hall,Hall,Hall,Hall,Hall,Hall,Floor,Floor,Lounge,Lounge,Lounge,Lounge,Lounge,Lounge,Lounge
+90,Study,Study,Study,Study,Study,Study,Study,Floor,Floor,Hall,Hall,Hall,Hall,Hall,Hall,Floor,Floor,Lounge,Lounge,Lounge,Lounge,Lounge,Lounge,Lounge
+80,,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Hall,Hall,Hall,Hall,Hall,Hall,Floor,Floor,Lounge,Lounge,Lounge,Lounge,Lounge,Lounge,Lounge
+70,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Hall,Hall,Hall,Hall,Hall,Hall,Floor,Floor,Lounge,Lounge,Lounge,Lounge,Lounge,Lounge,Lounge
+60,,Library,Library,Library,Library,Library,Floor,Floor,Floor,Hall,Hall,Hall,Hall,Hall,Hall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,
+50,Library,Library,Library,Library,Library,Library,Library,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor
+40,Library,Library,Library,Library,Library,Library,Library,Floor,Floor,Cellar,Cellar,Cellar,Cellar,Cellar,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,
+30,Library,Library,Library,Library,Library,Library,Library,Floor,Floor,Cellar,Cellar,Cellar,Cellar,Cellar,Floor,Floor,Diningroom,Diningroom,Diningroom,Diningroom,Diningroom,Diningroom,Diningroom,Diningroom
+20,,Library,Library,Library,Library,Library,Floor,Floor,Floor,Cellar,Cellar,Cellar,Cellar,Cellar,Floor,Floor,Diningroom,Diningroom,Diningroom,Diningroom,Diningroom,Diningroom,Diningroom,Diningroom
+10,,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Cellar,Cellar,Cellar,Cellar,Cellar,Floor,Floor,Diningroom,Diningroom,Diningroom,Diningroom,Diningroom,Diningroom,Diningroom,Diningroom
+0,Billiard Room,Billiard Room,Billiard Room,Billiard Room,Billiard Room,Billiard Room,Floor,Floor,Floor,Cellar,Cellar,Cellar,Cellar,Cellar,Floor,Floor,Diningroom,Diningroom,Diningroom,Diningroom,Diningroom,Diningroom,Diningroom,Diningroom
+-10,Billiard Room,Billiard Room,Billiard Room,Billiard Room,Billiard Room,Billiard Room,Floor,Floor,Floor,Cellar,Cellar,Cellar,Cellar,Cellar,Floor,Floor,Diningroom,Diningroom,Diningroom,Diningroom,Diningroom,Diningroom,Diningroom,Diningroom
+-20,Billiard Room,Billiard Room,Billiard Room,Billiard Room,Billiard Room,Billiard Room,Floor,Floor,Floor,Cellar,Cellar,Cellar,Cellar,Cellar,Floor,Floor,Diningroom,Diningroom,Diningroom,Diningroom,Diningroom,Diningroom,Diningroom,Diningroom
+-30,Billiard Room,Billiard Room,Billiard Room,Billiard Room,Billiard Room,Billiard Room,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Diningroom,Diningroom,Diningroom,Diningroom,Diningroom
+-40,Billiard Room,Billiard Room,Billiard Room,Billiard Room,Billiard Room,Billiard Room,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,
+-50,,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Ballroom,Ballroom,Ballroom,Ballroom,Ballroom,Ballroom,Ballroom,Ballroom,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor
+-60,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Ballroom,Ballroom,Ballroom,Ballroom,Ballroom,Ballroom,Ballroom,Ballroom,Floor,Floor,Kitchen,Kitchen,Kitchen,Kitchen,Kitchen,
+-70,,Conservatory,Conservatory,Conservatory,Conservatory,Floor,Floor,Floor,Ballroom,Ballroom,Ballroom,Ballroom,Ballroom,Ballroom,Ballroom,Ballroom,Floor,Floor,Kitchen,Kitchen,Kitchen,Kitchen,Kitchen,Kitchen
+-80,Conservatory,Conservatory,Conservatory,Conservatory,Conservatory,Conservatory,Floor,Floor,Ballroom,Ballroom,Ballroom,Ballroom,Ballroom,Ballroom,Ballroom,Ballroom,Floor,Floor,Kitchen,Kitchen,Kitchen,Kitchen,Kitchen,Kitchen
+-90,Conservatory,Conservatory,Conservatory,Conservatory,Conservatory,Conservatory,Floor,Floor,Ballroom,Ballroom,Ballroom,Ballroom,Ballroom,Ballroom,Ballroom,Ballroom,Floor,Floor,Kitchen,Kitchen,Kitchen,Kitchen,Kitchen,Kitchen
+-100,Conservatory,Conservatory,Conservatory,Conservatory,Conservatory,Conservatory,Floor,Floor,Ballroom,Ballroom,Ballroom,Ballroom,Ballroom,Ballroom,Ballroom,Ballroom,Floor,Floor,Kitchen,Kitchen,Kitchen,Kitchen,Kitchen,Kitchen
+-110,Conservatory,Conservatory,Conservatory,Conservatory,Conservatory,Conservatory,,Floor,Floor,Floor,Ballroom,Ballroom,Ballroom,Ballroom,Floor,Floor,Floor,,Kitchen,Kitchen,Kitchen,Kitchen,Kitchen,Kitchen
+-120,,,,,,,,,,Floor,Ballroom,Ballroom,Ballroom,Ballroom,Floor,,,,,,,,,

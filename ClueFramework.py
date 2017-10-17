@@ -180,8 +180,13 @@ class Room:
         self.secretPassage = None
         self.boardTiles = []
         self.walls = []
-        self.doors =[]
+        self.doors ={} #use  dictionary to ease lookup of coordinate against direction 
 
+def drawBoard():
+    import turtle
+    wn = turtle.screen
+    boardPen = turtle.Turtle()
+    
 
 
 mystery = "Unsolved"
@@ -229,7 +234,7 @@ def playerSelect(suspects):
             validPlayer = True
             remainingPlayers.remove()
     while remainingNumPlayers > 0:
-        validAIChoice = False:
+        validAIChoice = False
         while validAIChoice == False:
             suspectString = []
             startIndex = 1
@@ -284,9 +289,12 @@ def playGame():
     buildBoard(rooms)
     mysterySolved = False
     while mysterySolved == False:
-
-rounds_played = 0
-play_turn(plum)
+if __name__ == "__main__":
+    pass 
+    
+    
+    #play_turn(plum)
+#drawBoard()
 # while mystery == "Unsolved":
 #     for player in players:
 #         play_turn(player)
